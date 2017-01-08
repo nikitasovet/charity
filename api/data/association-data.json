@@ -2,14 +2,29 @@
   "name": "Croix-Rouge Délégation Départementale de Paris",
   "username":"CR",
   "address": "12 Rue Chardin",
-  "code postal": "75016",
+  "codePostal": "75016",
   "city":"Paris",
-  "Country":"France",
-  "description": "La Croix-Rouge française (CRF) est une association d'aide humanitaire française fondée en 1864. Elle a pour objectif de venir en aide aux personnes en difficulté en France et à l'étranger. Ses missions fondamentales sont le secourisme, l'action sociale, la formation, la santé et l'action internationale.",
+  "country":"France",
   "phone": "01 44 14 68 88",
+  "description": "La Croix-Rouge française (CRF) est une association d'aide humanitaire française fondée en 1864. Elle a pour objectif de venir en aide aux personnes en difficulté en France et à l'étranger. Ses missions fondamentales sont le secourisme, l'action sociale, la formation, la santé et l'action internationale.",
+  "lien": "facebook",
+  "photo":[
+      "../../public/images/cr.jpg",
+      "../../public/images/logo.jpg"
+    ]
 },{
-  "name":"",
-  "address":"",
-  "description":"",
-  "phone":""
-  }]
+  "name":"Fonds des Nations unies pour l'enfance (Unicef)",
+  "username":"UNICEF Paris",
+  "addres":" 7 Rue Saint-Lazare",
+  "codePostal":"75009",
+  "city":"Paris",
+  "country": "France",
+  "phone":"01 48 74 74 60",
+  "description":"Le Fonds des Nations unies pour l'enfance (Unicef) est une agence de l'Organisation des Nations unies consacrée à l'amélioration et à la promotion de la condition des enfants. Lors de sa création le 11 décembre 19461, son nom était originellement United Nations International Children's Emergency Fund, dont elle a conservé l'acronyme. Elle a activement participé à la rédaction, la conception et la promotion de la Convention relative aux droits de l'enfant (CIDE), adoptée lors du sommet de New York le 20 novembre 1989.",
+  "lien":"facebook",
+  "photo":[
+    "../../public/images/unicef.jpg",
+    "../../public/images/unicef2.jpg"
+  ]
+
+}]
