@@ -1,5 +1,5 @@
 (function(){
-  var app = angular.module('myApp',[]);
+  var app = angular.module('myApp',['ngRoute']);
 
   app.directive('header',function(){
     return{
@@ -15,12 +15,7 @@
     }
   });
 
-  app.directive('main',function(){
-    return{
-      restrict:'A',
-      templateUrl:'partials/home/home.html'
-    }
-  });
+
 
   app.config(['$routeProvider',function($routeProvider){
     $routeProvider
