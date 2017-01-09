@@ -1,0 +1,330 @@
+.navigation
+{
+	font-size: 20px;
+}
+
+#category
+{
+	font-size: 20px;
+}
+
+.googleMap
+{
+	float:right;
+}
+
+.tailleTitre
+{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.w3-sidenav
+{
+	position:fixed!important;
+	z-index:0!important;
+	overflow:auto;
+}
+
+.blocResume
+{
+	border: solid black 1px;
+	padding: 2px 2px 2px 2px;
+}
+
+.blocPresentation
+{
+	border: solid black 1px;
+	padding: 10px 10px 10px 10px;
+}
+
+.blocPhoto1
+{
+	height: 250px;
+	border: solid black 2px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.blocPhoto2
+{
+	height: 250px;
+	border: solid black 2px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.boiteActivites
+{
+	height:250px;
+	width: 100%;
+	border: solid black 2px;
+	padding: 10px 10px 10px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bloc1
+{
+	margin-top: 20px;
+	height: 200px;
+}
+
+.avatar
+{
+	height: 200px;
+	width: 200px;
+}
+
+.identite
+{
+	color: grey;
+	font-size: 30px;
+	margin-top: 15px;
+}
+
+.recommandation
+{
+	font-size: 17px;
+	color: lightgrey;
+	margin-top: 15px;
+}
+
+.separator
+{
+	height:2px;
+	width:100%;
+	border: none;
+	box-shadow: none;
+	background-color: lightgrey;
+}
+
+.icone
+{
+	height: 30px;
+	width: 30px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.boutonContact
+{
+	width: 20px;
+}
+
+.blocProfil
+{
+	height: 200px;
+	border: solid black;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 20px 10px 20px;
+	background-color: #f8f8f8;
+}
+
+.blocProfil4
+{
+	height: 300px;
+	border: solid black;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 20px 10px 20px;
+	background-color: #f8f8f8;
+}
+
+.titrePresentation, .titreFicheContact, .titreEngagement, .titreCompetences
+{
+	color:#2896dc;
+}
+
+.textePresentation
+{
+	text-align: center;
+}
+
+.blocVide
+{
+	width:80px;
+	height:80px;
+	background-color: lightgrey;
+	border: black solid 1px;
+}
+
+.nomCharity
+{
+	font-size: 20px;
+}
+
+.blocCompetence
+{
+	height: 40px;
+	width: 80px;
+	border: solid black 2px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 10px 10px 10px 10px;
+	background-color: #f8f8f8;
+	text-align: center;
+	font-size: 15px;
+}
+
+.blocCompetence2
+{
+	height: 40px;
+	width: 150px;
+	border: solid black 2px;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 10px 10px 10px 10px;
+	background-color: #f8f8f8;
+	text-align: center;
+	font-size: 15px;
+}
+
+.blocProfil2
+{
+	height: 210px;
+	border: solid black;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 20px 10px 20px;
+	background-color: #f8f8f8;
+}
+
+.blocProfil3
+{
+	height: 400px;
+	border: solid black;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 20px 10px 20px;
+	background-color: #f8f8f8;
+}
+
+
+/*BOUTON IOS MOBILE*/
+
+.switch
+{
+	width: 62px;
+	height: 32px;
+	background: #E5E5E5;
+	z-index: 0;
+	margin: 0;
+	padding: 0;
+	appearance: none;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	border-radius:16px; //IE 11
+	-moz-border-radius:16px; //Mozilla
+	-webkit-border-radius:16px; //Chrome and Safari
+}
+
+.switch:before
+{
+	content: ' ';
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	width: 60px;
+	height: 30px;
+	background: #FFFFFF;
+	z-index: 1;
+	border-radius:16px; //IE 11
+	-moz-border-radius:16px; //Mozilla
+	-webkit-border-radius:16px; //Chrome and Safari
+}
+
+.switch:after
+{
+	content: ' ';
+	height: 29px;
+	width: 29px;
+	border-radius: 28px;
+	z-index: 2;
+	background: #FFFFFF;
+	position: absolute;
+	-webkit-transition-duration: 300ms;
+	transition-duration: 300ms;
+	top: 1px;
+	left: 1px;
+	-webkit-box-shadow: 0 2px 5px #999999;
+	box-shadow: 0 2px 5px #999999;
+}
+
+.switchOn , .switchOn:before
+{
+	background: #4cd964 !important;
+}
+.switchOn:after
+{
+	left: 21px !important;
+}
+
+
+
+.checkbox{display:none}
+.switch
+{
+	width: 62px;
+	height: 32px;
+	background: #E5E5E5;
+	z-index: 0;
+	margin: 0;
+	padding: 0;
+	appearance: none;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	border-radius:16px; //IE 11
+	-moz-border-radius:16px; //Mozilla
+	-webkit-border-radius:16px; //Chrome and Safari
+}
+.switch:before
+{
+	content: ' ';
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	width: 60px;
+	height: 30px;
+	background: #FFFFFF;
+	z-index: 1;
+	border-radius:16px; //IE 11
+	-moz-border-radius:16px; //Mozilla
+	-webkit-border-radius:16px; //Chrome and Safari
+}
+.switch:after
+{
+	content: ' ';
+	height: 29px;
+	width: 29px;
+	border-radius: 28px;
+	background: #FFFFFF;
+	position: absolute;
+	z-index: 2;
+	top: 1px;
+	left: 1px;
+	-webkit-transition-duration: 300ms;
+	transition-duration: 300ms;
+	-webkit-box-shadow: 0 2px 5px #999999;
+	box-shadow: 0 2px 5px #999999;
+}
+.switchOn , .switchOn:before
+{
+	background: #4cd964 !important;
+}
+.switchOn:after
+{
+	left: 21px !important;
+}
