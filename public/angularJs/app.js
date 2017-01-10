@@ -43,7 +43,7 @@
         charityService.postAddOne({
             name: $scope.name,
             username: $scope.username,
-            address: $scope.addres,
+            address: $scope.address,
             codePostal: $scope.codePostal,
             city: $scope.city,
             country: $scope.country,

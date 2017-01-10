@@ -74,18 +74,19 @@ img{
     height: auto;
 }
 
-.form-control{
-  color:black;
-}
 
-.tailleTitre{
+.description{
   color:black;
-}
-
-p{
-  color:black;
+  border: 2px solid;
+  margin: 5px;
+  margin-top: 15px;
 }
 
 label{
   color:black;
+}
+
+h3{
+  color: grey;
+  margin:5px;
 }
