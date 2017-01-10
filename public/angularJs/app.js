@@ -26,33 +26,37 @@
 
   app.controller('profile',function(charityService, $scope, $routeParams) {
         var associationId = $routeParams.associationId;
-        console.log(associationId);
+        console.log("ici", associationId);
         $scope.profile = {};
         charityService.getOnePost(associationId).then(function(response) {
+          console.log(response);
             $scope.profile = response.data;
             console.log($scope.profile);
         });
 
   });
 
+
+
   app.controller('form',function(charityService, $scope){
-        this.contact = function() {
-            charityService.postAddOne({
-                name: $scope.name,
-                username: $scope.username,
-                address: $scope.addres,
-                codePostal: $scope.codePostal,
-                city: $scope.city,
-                country: $scope.country,
-                phone: $scope.phone,
-                description: $scope.description
-            }).then(function(response) {
-                window.location.href = "#/form"
-            });
-        }
+    this.contact = function() {
+        charityService.postAddOne({
+            name: $scope.name,
+            username: $scope.username,
+            address: $scope.addres,
+            codePostal: $scope.codePostal,
+            city: $scope.city,
+            country: $scope.country,
+            phone: $scope.phone,
+            description: $scope.description,
+            photo: $scope.photo
+        }).then(function(response) {
+            window.location.href = "#/association"
+        });
+    }
 
 
-    });
+  });
 
 
   app.config(['$routeProvider',function($routeProvider){
@@ -65,7 +69,7 @@
         controller: 'association',
         controllerAs: 'associationCtrl'
       })
-      .when('/profile',{
+      .when('/profile/:associationId',{
         templateUrl:'partials/profile.html',
         controller:'profile',
         controllerAs:'profileCtrl'
@@ -92,7 +96,7 @@
       }
 
       function  getOnePost(associationId) {
-          return $http.get('/api/association', associationId).then(complete).catch(failed);
+          return $http.get('/api/association/'+associationId).then(complete).catch(failed);
       }
 
       function postAddOne(association) {

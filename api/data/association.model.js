@@ -33,6 +33,7 @@ var associationSchema = new mongoose.Schema({
   description: String,
   lien: String,
   photo:[String]
+  
 });
 
 mongoose.model("association", associationSchema, "association");
