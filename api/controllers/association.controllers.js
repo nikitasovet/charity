@@ -3,27 +3,27 @@ var Association = mongoose.model('association');
 var Members = mongoose.model('members');
 var crypto = require('crypto');
 
-module.exports.associationGetAll = (req,res) => {
-   console.log('Get the association');
-
-
-  Association
-        .find()
-        .exec(function(err,associations){
-          console.log(err);
-          console.log(associations);
-          if(err){
-            console.log("Error finding association");
-            res
-                .status(500)
-                .json(err);
-          } else {
-            console.log("Found association", associations.length);
-            res
-                .json(associations);
-          }
-        });
-};
+// module.exports.associationGetAll = (req,res) => {
+//    console.log('Get the association');
+//
+//
+//   Association
+//         .find()
+//         .exec(function(err,associations){
+//           console.log(err);
+//           console.log(associations);
+//           if(err){
+//             console.log("Error finding association");
+//             res
+//                 .status(500)
+//                 .json(err);
+//           } else {
+//             console.log("Found association", associations.length);
+//             res
+//                 .json(associations);
+//           }
+//         });
+// };
 
 module.exports.associationGetOne = (req, res) => {
   var id = req.session.associationId;

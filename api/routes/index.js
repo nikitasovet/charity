@@ -20,15 +20,11 @@ var authentification = function(req, res, next) {
 // Les méthodes avec authentification sont des méthodes qui ne fonctionnent que si il y a une session active
 router
     .route('/association')
-    .get(authentification, ctrlAssociation.associationGetAll)
-    .post(ctrlAssociation.associationAddOne);
-
-router
-    .route('/association/:associationId')
+    .post(ctrlAssociation.associationAddOne)
     .get(authentification, ctrlAssociation.associationGetOne)
     .delete(authentification, ctrlAssociation.associationDelete)
     .put(authentification, ctrlAssociation.associationPut);
-
+    // .get(authentification, ctrlAssociation.associationGetAll)
 
 // Event routes
 router
