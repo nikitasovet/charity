@@ -15,29 +15,6 @@
     }
   });
 
-  app.controller('association',function(charityService, $scope){
-    $scope.associations = [];
-    charityService.getAllPosts().then(function(response) {
-        // console.log(response.data);
-        $scope.associations = response.data;
-    });
-
-  });
-
-  app.controller('profile',function(charityService, $scope, $routeParams) {
-        var associationId = $routeParams.associationId;
-        console.log("ici", associationId);
-        $scope.profile = {};
-        charityService.getOnePost(associationId).then(function(response) {
-          console.log(response);
-            $scope.profile = response.data;
-            console.log($scope.profile);
-        });
-
-  });
-
-
-
   app.controller('form',function(charityService, $scope){
     this.contact = function() {
         charityService.postAddOne({
@@ -51,12 +28,80 @@
             description: $scope.description,
             photo: $scope.photo
         }).then(function(response) {
-            window.location.href = "#/association"
+            window.location.href = "dashboard";
         });
     }
 
 
   });
+
+  // Controller pour créer un compte
+  app.controller('registerController', function(charityService, $scope) {
+    this.addUser = function() {
+      var membreInformations = {
+        name: $scope.name,
+        email: $scope.email,
+        password: $scope.password
+      };
+
+      console.log(membreInformations);
+      charityService.memberAdd(membreInformations).then(function(response) {
+        window.location.href = "dashboard";
+      });
+    }
+    this.addAssociation = function() {
+      console.log('ici');
+        charityService.postAddOne({
+            name: $scope.name,
+            surname: $scope.surname,
+            address: $scope.address,
+            codePostal: $scope.codePostal,
+            city: $scope.city,
+            country: $scope.country,
+            phone: $scope.phone,
+            description: $scope.description,
+            photo: $scope.photo,
+            email: $scope.email2,
+            password: $scope.password2
+        }).then(function(response) {
+            window.location.href = "dashboardassoc";
+        });
+    }
+  });
+
+  app.controller('loginController', function(charityService, $scope) {
+    this.seConnecter = function() {
+      var membreInformations = {
+        email: $scope.email,
+        password: $scope.password
+      };
+      charityService.connect(membreInformations).then(function(response) {
+        console.log(response);
+        if(response.data.isAssoc)
+          window.location.href = "dashboardassoc";
+        else
+          window.location.href = "dashboard"
+      });
+    }
+  });
+
+  // app.controller('modification',function(charityService, $scope, $routeParams){
+  //   this.modif = function(){
+  //     var associationId = $routeParams.associationId;
+  //     console.log(associationId);
+  //     // charityService.putOne(associationId, {
+  //     //   name: $scope.name,
+  //     //   address: $scope.address,
+  //     //   username: $scope.username,
+  //     //   codePostal: $scope.codePostal,
+  //     //   city: $scope.city,
+  //     //   country: $scope.country,
+  //     //   phone: $scope.phone,
+  //     //   description: $scope.description,
+  //     //   photo: $scope.photo
+  //     // })
+  //   }
+  // });
 
 
   app.config(['$routeProvider',function($routeProvider){
@@ -64,20 +109,20 @@
       .when('/',{
         templateUrl:'partials/home/home.html'
       })
-      .when('/association',{
-        templateUrl:'partials/association.html',
-        controller: 'association',
-        controllerAs: 'associationCtrl'
-      })
-      .when('/profile/:associationId',{
-        templateUrl:'partials/profile.html',
-        controller:'profile',
-        controllerAs:'profileCtrl'
-      })
       .when('/form',{
         templateUrl:'partials/form.html',
         controller:'form',
         controllerAs:'formCtrl'
+      })
+      .when('/register', {
+        templateUrl: 'partials/register.html',
+        controller: 'registerController',
+        controllerAs: 'registerCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'loginController',
+        controllerAs: 'loginCtrl'
       })
 
   }]);
@@ -88,7 +133,9 @@
           getOnePost: getOnePost,
           postAddOne: postAddOne,
           deleteOne : deleteOne,
-          putOne: putOne
+          putOne: putOne,
+          memberAdd: memberAdd,
+          connect : connect
       };
 
       function getAllPosts() {
@@ -107,8 +154,14 @@
         return $http.delete('/api/association', association).then(complete).catch(failed);
       }
 
-      function putOne(association){
-        return $http.put('/api/association', association).then(complete).catch(failed);
+      function putOne(associationId, association){
+        return $http.put('/api/association/'+associationId, association).then(complete).catch(failed);
+      }
+      function memberAdd(memberInfo) {
+        return $http.post('/api/member', memberInfo).then(complete).catch(failed);
+      }
+      function connect(memberInfo) {
+        return $http.post('/api/login', memberInfo).then(complete).catch(failed);
       }
 
       function complete(response) {

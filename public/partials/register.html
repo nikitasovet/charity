@@ -1,0 +1,155 @@
+<div class="container">
+  <div class="row">
+    <div ng-init="tabSelected = 1">
+
+        <button type="button" class="btn btn-default" ng-click="tabSelected = 1">Je veux être bénévole </button>
+        <button type="button" class="btn btn-default" ng-click="tabSelected = 2">Créer une association</button>
+
+
+      <div ng-show="tabSelected === 1">
+        <h1>Bénévole</h1>
+
+      <div class="container">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="text-center">
+              <img src="images/charity.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+              <h6>Telecharger des photos...</h6>
+              <input type="file" class="text-center center-block well well-sm">
+            </div>
+          </div>
+          <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+        <form class="form-horizontal" name="formAddUser" ng-submit="formAddUser.$valid && registerCtrl.addUser()" >
+          <div class="form-group">
+            <label id="form" class="col-lg-3 control-label">Nom</label>
+          <div class="col-lg-8">
+          <input class="form-control" placeholder="nom" type="text" ng-model="name" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label id="form" class="col-lg-3 control-label">Email</label>
+        <div class="col-lg-8">
+          <input class="form-control" placeholder="email" type="text" ng-model="email" required />
+        </div>
+      </div>
+        <div class="form-group">
+          <label id="form" class="col-lg-3 control-label">Mot de passe</label>
+        <div class="col-lg-8">
+          <input class="form-control" placeholder="mot depasse" type="text" ng-model="password" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label"></label>
+        <div class="col-md-8">
+          <input class="btn btn-custom btn-lg btn-block" value="Envoyer" type="submit"/>
+          <span></span>
+        </div>
+      </div>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+
+      <div ng-show="tabSelected === 2">
+        <h1>Association</h1>
+        <div class="container">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="text-center">
+                <img src="images/charity.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+                <h6>Telecharger des photos...</h6>
+                <input type="file" class="text-center center-block well well-sm">
+              </div>
+            </div>
+            <!-- edit form column -->
+            <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+
+              <form class="form-horizontal" role="form" name="formAddAssoc" ng-submit="formAddAssoc.$valid && registerCtrl.addAssociation()">
+                <div class="form-group">
+                  <label id="form" class="col-lg-3 control-label">Nom de l'association</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" placeholder="nom" type="text" ng-model="name" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="form" class="col-lg-3 control-label">Surnom Association</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" placeholder="Surnom association" type="text" ng-model="surname" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="form" class="col-lg-3 control-label">Adresse</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" placeholder="adresse" type="text" ng-model="address" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="form" class="col-lg-3 control-label">Code Postal</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" placeholder="Code Postal" type="text" ng-model="codePostal" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="form" class="col-lg-3 control-label">Ville</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" placeholder="City" type="text" ng-model="city" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="form" class="col-lg-3 control-label">Pays</label>
+                  <div class="col-lg-8">
+                    <div class="ui-select">
+                      <select id="user_time_zone" ng-model="country" class="form-control">
+                        <option value="pays">France</option>
+                        <option value="pays">Allemange</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label id="form" class="col-md-3 control-label">Telephone:</label>
+                  <div class="col-md-8">
+                    <input class="form-control" placeholder="telephone" type="text" ng-model="phone" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label  id="form" class="col-md-3 control-label">Description:</label>
+                  <div class="col-md-8">
+                    <textarea class="form-control" placeholder="description" type="text" ng-model="description" required />
+                  </div>
+                </div>
+                <hr/>
+                <div class="form-group">
+                  <label id="form" class="col-lg-3 control-label">Email</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" placeholder="email" type="text" ng-model="email2" required />
+                    <!--ici on met un ng-model différent parce qu'on a le meme
+                     scope pour les deux formulaire, donc deux ng-model email,
+                      donc on met email2, pareil pour password en dessous
+                   -->
+                  </div>
+                </div>
+                  <div class="form-group">
+                    <label id="form" class="col-lg-3 control-label">Mot de passe</label>
+                  <div class="col-lg-8">
+                    <input class="form-control" placeholder="mot de passe" type="text" ng-model="password2" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-3 control-label"></label>
+                  <div class="col-md-8">
+                    <input class="btn btn-custom btn-lg btn-block" value="Envoyer" type="submit"/>
+                    <span></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

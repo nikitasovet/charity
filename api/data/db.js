@@ -45,3 +45,4 @@ process.on('SIGTERM', function() {
 // BRING IN YOUR SCHEMAS & MODELS
 require('./association.model');
 require('./event.model');
+require('./members.model');

@@ -1,0 +1,45 @@
+.search {
+    width: 100%;
+    margin-top: 70px;
+    padding: 0 10px 0 10px;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 70px;
+    color: black;
+}
+.search::-ms-clear{
+    display: none;
+}
+.navigation
+{
+    font-size: 20px;
+}
+button {
+    background-color: #4169E1;
+    border: none;
+    color: white;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    font-weight: 400;
+}
+
+.charityPresentation{
+  color:black;
+}
+
+.button-search{
+  width: 100%;
+  margin-top: 70px;
+  padding: 0 10px 0 10px;
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 70px;
+  background-color: #f06b6b;
+}

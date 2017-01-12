@@ -6,7 +6,7 @@ var associationSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  username: {
+  surname: {
     type: String,
     required: true
   },
@@ -32,8 +32,12 @@ var associationSchema = new mongoose.Schema({
   },
   description: String,
   lien: String,
-  photo:[String]
-  
+  photo:[String],
+  idCreator:{
+    type: String,
+    required: true
+  }
+
 });
 
 mongoose.model("association", associationSchema, "association");

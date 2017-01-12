@@ -3,8 +3,11 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+
 
 var routes = require('./api/routes');
+var routesPublic = require('./api/routes/routesPublic.js');
 
 // Define the port to run on
 app.set('port', 3000);
@@ -14,6 +17,16 @@ app.use(function(req, res, next) {
   console.log(req.method, req.url);
   next();
 });
+
+// Ici on met le système de session
+app.use(session({
+    secret: 'supersecret',
+    resave: true,
+    saveUninitialized: true,
+    httpOnly: false,
+    secure: false
+}));
+
 
 // Set static directory before defining routes
 app.use(express.static(path.join(__dirname, 'public')));
@@ -26,6 +39,7 @@ app.use(bodyParser.json());
 
 // Add some routing
 app.use('/api', routes);
+app.use('/', routesPublic);
 
 // Listen for requests
 var server = app.listen(app.get('port'), function() {
