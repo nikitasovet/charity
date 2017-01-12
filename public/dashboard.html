@@ -1,110 +1,210 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
+<head>
+	<title>Page publique</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" media="screen,projection"/>
-    <link rel="stylesheet" href="css/simple-sidebar.css" type="text/css">
-    <link rel="stylesheet" href="css/style-sheet.css" type="text/css">
-    <link rel="stylesheet" href="css/login.css" type="text/css">
-    <link rel="stylesheet" href="css/navbarr.css" type="text/css">
-  </head>
-  <body>
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" type="text/css" href="ccs/style-sheet.css">
+ </head>
+<body>
+
+	<!--Navbar (première barre de navigation)-->
+	<header id="header">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myFirstNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="myFirstNavbar">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="#"><span class="navigation">Charity</span></a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class=""></span> Croix Rouge</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Paris 6</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+						<li><a href="/signout"><span class="glyphicon glyphicon-user"></span> Se déconnecter</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 
 
-<a href="/signout">Se déconnecter</a>
+	<!--Navbar (deuxième barre de navigation)-->
+	<header id="header">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mySecondNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="mySecondNavbar">
+					<ul class="nav navbar-nav navbar-left">
+						<li><a href="#"><span class="navigation">Forum</span></a></li>
+						<li><a href="#"><span class="navigation">Calendrier</span></a></li>
+						<li><a href="#"><span class="navigation">Membres</span></a></li>
+						<li class="active"><a href="index.html"><span class="navigation">Page publique</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 
-<div id="wrapper" ng-init="tabSelected = 1">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    {{profile.username}}
-                </a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 1">Présentation</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 2">Activité</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 3">Photo</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 4">Calendrier</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 5">Modification</a>
-            </li>
-        </ul>
+  <!--début page profil -->
+
+
+
+
+<div class="container-fluid">
+<div class="bloc1">
+  <div class="col-xs-2"><img class="avatar" src="images/avatar.png"></div>
+  <div class="col-xs-10">
+    <div class="row">
+      <div class="col-xs-9"><span class="identite">Prénom et Nom</span></div>
+      <div class="col-xs-2"><span class="recommandation">3 recommandations</span></div>
+      <div class="col-xs-1">12 <span class="glyphicon glyphicon-heart-empty"></span></div>
     </div>
-
-    <div class="container-fluid">
-
-      <div ng-show="tabSelected === 1" class="row">
-        <h1>{{profile.name}}</h1>
-        <h3>Presentation</h3>
-
-        <div class="description">{{profile.description}}</div>
-
-      <h3>Adresse</h3>
-      <div class="description">{{profile.address}}</div>
-
-      <h3>Code postal</h3>
-      <div class="description">{{profile.codePostal}}</div>
-
-      <h3>Ville</h3>
-      <div class="description">{{profile.city}}</div>
-
-      <h3>Pays</h3>
-      <div class="description">{{profile.Country}}</div>
-
-      <h3>Telephone</h3>
-      <div class="description">{{profile.phone}} </div>
+    <hr class="separator">
+    <div class="row">
+      <div class="col-xs-10"><span class="glyphicon glyphicon-map-marker"></span> Paris | 24 ans</div>
+      <div class="col-xs-2"><img class="icone" src="images/iconeFacebook.jpg">
+        <img class="icone" src="images/iconeTwitter.jpg">
+        <img class="icone" src="images/iconeGoogle.jpg">
       </div>
-
-  		  <!--ACTIVITES-->
-      <div ng-show="tabSelected === 2" class="row">
-        <h1>Activité</h1>
-
-      </div>
-
-      <div ng-show="tabSelected === 3" class="row">
-        <h1>Photo</h1>
-        <img ng-src="images/{{profile.photo[0]}}" alt="image">
-
-      </div>
-
-      <div ng-show="tabSelected === 4" class="row">
-        <h1>Calendrier</h1>
-      </div>
-
-      <div  ng-show='tabSelected === 5' class="row">
-        <h1>Modification</h1>
-
-
-
-
-
-      </div>
-
+    </div><br><br>
+    <div class="row">
+      <div class="col-xs-10"></div>
+      <div class="col-xs-2"><button type="button" class="btn btn-primary" class="boutonContact">Contacter</button></div>
     </div>
-    <!-- /#page-content-wrapper -->
-
+  </div>
 </div>
-<!-- /#wrapper -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
-<script type="text/javascript" src="angularJs/app.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
+</div>
+<br><br>
+<div class="container-fluid">
+<div class="bloc2">
+  <div class="row">
+    <div class="col-xs-7"><div class="blocProfil"><h3 class="titrePresentation">Présentation</h3><br><p class="textePresentation">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum repellat nemo distinctio, alias cumque dolores tempore, nam. Laudantium ea deleniti ipsum saepe, id quos, architecto, numquam assumenda, accusantium ipsam fugiat!</p></div></div>
+    <div class="col-xs-5"><div class="blocProfil"><h3 class="titreFicheContact">Fiche de contact</h3><br><p class="textePresentation">adresseemail@mail.fr</p><br><p class="textePresentation">0601020304</p></div></div>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+    <div class="blocProfil4"><h3 class="titreEngagement">Engagement</h3><br>
+
+      <div class="row">
+        <div class="col-xs-1">
+          <div class="blocVide"></div>
+        </div>
+        <div class="col-xs-11">
+          <span class="nomCharity">Nom de la Charity 1</span><br>
+          18 <span class="glyphicon glyphicon-heart-empty"></span><br>
+          <span>Administrateur | actif depuis le 12 janvier 2016</span>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-xs-1">
+          <div class="blocVide"></div>
+        </div>
+        <div class="col-xs-11">
+          <span class="nomCharity">Nom de la Charity 2</span><br>
+          18 <span class="glyphicon glyphicon-heart-empty"></span><br>
+          <span>Administrateur | actif depuis le 12 janvier 2016</span><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+    <div class="blocProfil2"><h3 class="titreCompetences">Compétences Spécifiques</h3><br>
+      <div class="col-xs-1"><div class="blocCompetence">BAFA</div></div>
+      <div class="col-xs-1"><div class="blocCompetence">ECOUTE</div></div>
+      <div class="col-xs-1"><div class="blocCompetence">FILE</div></div>
+      <div class="col-xs-1"><div class="blocCompetence">DROIT</div></div>
+      <div class="col-xs-2"><div class="blocCompetence2">MANUTENTION</div></div>
+      <div class="col-xs-2"><div class="blocCompetence2">MEDECINE</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-xs-12">
+    <div class="blocProfil3"><h3 class="titreEngagement">Prénom soutient :</h3><br>
+
+      <div class="row">
+        <div class="col-xs-1">
+          <div class="blocVide"></div>
+        </div>
+        <div class="col-xs-11">
+          <span class="nomCharity">Nom de la Charity 1</span><br>
+          80 <span class="glyphicon glyphicon-heart-empty"></span><br>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-xs-1">
+          <div class="blocVide"></div>
+        </div>
+        <div class="col-xs-11">
+          <span class="nomCharity">Nom de la Charity 2</span><br>
+          56 <span class="glyphicon glyphicon-heart"></span><br>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-xs-1">
+          <div class="blocVide"></div>
+        </div>
+        <div class="col-xs-11">
+          <span class="nomCharity">Nom de la Charity 3</span><br>
+          32 <span class="glyphicon glyphicon-heart-empty"></span><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- jQuery  -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<!--JS-->
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
 
 
 </body>

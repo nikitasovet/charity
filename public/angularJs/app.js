@@ -15,25 +15,25 @@
     }
   });
 
-  app.controller('form',function(charityService, $scope){
-    this.contact = function() {
-        charityService.postAddOne({
-            name: $scope.name,
-            username: $scope.username,
-            address: $scope.address,
-            codePostal: $scope.codePostal,
-            city: $scope.city,
-            country: $scope.country,
-            phone: $scope.phone,
-            description: $scope.description,
-            photo: $scope.photo
-        }).then(function(response) {
-            window.location.href = "dashboard";
-        });
-    }
-
-
-  });
+  // app.controller('form',function(charityService, $scope){
+  //   this.contact = function() {
+  //       charityService.postAddOne({
+  //           name: $scope.name,
+  //           username: $scope.username,
+  //           address: $scope.address,
+  //           codePostal: $scope.codePostal,
+  //           city: $scope.city,
+  //           country: $scope.country,
+  //           phone: $scope.phone,
+  //           description: $scope.description,
+  //           photo: $scope.photo
+  //       }).then(function(response) {
+  //           window.location.href = "dashboard";
+  //       });
+  //   }
+  //
+  //
+  // });
 
   // Controller pour créer un compte
   app.controller('registerController', function(charityService, $scope) {
@@ -108,11 +108,6 @@
     $routeProvider
       .when('/',{
         templateUrl:'partials/home/home.html'
-      })
-      .when('/form',{
-        templateUrl:'partials/form.html',
-        controller:'form',
-        controllerAs:'formCtrl'
       })
       .when('/register', {
         templateUrl: 'partials/register.html',

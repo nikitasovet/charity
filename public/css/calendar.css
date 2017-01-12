@@ -1,0 +1,39 @@
+/* Navbar début */
+.navigation {
+    font-size: 20px;
+}
+/* Navbar fin */
+.mois {
+  padding-top: 10px;
+}
+.list-group-item {
+  margin: auto;
+  text-align: center;
+
+}
+.month {
+  font: verdana;
+  font-size: 20px;
+  color: #777;
+}
+.list-event {
+  height: 581px;
+}
+.event-margin{
+  margin-top: 20px;
+}
+.dateBeginEnd {
+  margin-left: auto;;
+  font-weight: bold;
+
+}
+.yesNo{
+  margin-left: auto;
+}
+.hourBeginEnd{
+  margin-left: auto;
+  font-weight: bold;
+}
+.sendInvit{
+  text-align: center;
+}

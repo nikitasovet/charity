@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/calendar.css" media="screen" title="no title">
+
+  <title>Calendrier</title>
+</head>
+
+<!-- Navbar début -->
+
+<!--Navbar (première barre de navigation)-->
+<header id="header">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myFirstNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myFirstNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="#"><span class="navigation">Charity</span></a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class=""></span> Croix Rouge</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Paris 6</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profil</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<!--Navbar (deuxième barre de navigation)-->
+<header id="header">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mySecondNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="mySecondNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="#"><span class="navigation">Forum</span></a></li>
+          <li class="active"><a href="calendar.html"><span class="navigation">Calendrier</span></a></li>
+          <li><a href="#"><span class="navigation">Membres</span></a></li>
+          <li><a href="dashboardassoc.html"><span class="navigation">Page publique</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Navbar fin -->
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <span class="navigation">EVENEMENTS A VENIR</span>
+            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Créer</button>
+            <!--Modal création ------------------------------------------------------------>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">CREATION D'EVENEMENT</h4>
+                  </div>
+                  <div class="modal-body">
+                    <!-- form début---------------------------------------------------------------->
+                    <form action="#" method="post" class="form" role="form">
+                      <input class="form-control" name="eventName" placeholder="Nom de l'évènement" type="text" />
+                      <input class="form-control event-margin" name="lieu" placeholder="Lieu de l'évènement" type="text" />
+                      <textarea name="message" id="message" class="form-control event-margin" rows="9" cols="25" required="required" placeholder="Description"></textarea>
+                      <label for=""></label>
+
+                      <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                          <p class="dateBeginEnd">Réccurent</p>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                          <p class="dateBeginEnd">Inviter des membres</p>
+                        </div>
+                      </div>
+                      <div class="row yesNo">
+                        <div class="col-xs-5 col-md-3">
+                          <button type="button" class="btn btn-default">Oui</button>
+                          <button type="button" class="btn btn-default">Non</button>
+                        </div>
+
+                        <div class="col-xs-7 col-md-9">
+                          <button type="button" class="btn btn-default btn-block sendInvit">Invitations</button>
+                        </div>
+
+                      </div>
+
+
+                    </br>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-md-12">
+                        <p class="dateBeginEnd">Tous les</p>
+                      </div>
+                    </div>
+                    <div class="row yesNo">
+                      <div class="col-xs-12 col-md-12">
+                        <button type="button" class="btn btn-default">Lundi</button>
+                        <button type="button" class="btn btn-default">Mardi</button>
+                        <button type="button" class="btn btn-default">Mercredi</button>
+                        <button type="button" class="btn btn-default">Jeudi</button>
+                        <button type="button" class="btn btn-default">Vendredi</button>
+                        <button type="button" class="btn btn-default">Samedi</button>
+                        <button type="button" class="btn btn-default">Dimanche</button>
+                      </div>
+                    </div>
+
+
+                  </br>
+
+                  <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                      <p class="hourBeginEnd">Date de début</p>
+                      <select class="form-control">
+                        <option value="Year"></option>
+                      </select>
+                    </div>
+
+                    <div class="col-xs-6 col-md-6">
+                      <p class="hourBeginEnd">Date de fin</p>
+                      <select class="form-control">
+                        <option value="Year"></option>
+                      </select>
+                    </div>
+                  </div>
+
+                </br>
+                <div class="row">
+                  <div class="col-xs-6 col-md-6">
+                    <p class="hourBeginEnd">Heure de début</p>
+                    <select class="form-control">
+                      <option value="Year"></option>
+                    </select>
+                  </div>
+
+                  <div class="col-xs-6 col-md-6">
+                    <p class="hourBeginEnd">Heure de fin</p>
+                    <select class="form-control">
+                      <option value="Year"></option>
+                    </select>
+                  </div>
+                </div>
+
+              </form>
+            </div><!--End modal body-->
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+              <button type="button" class="btn btn-primary" type="submit">Sauvegarder</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+      <!--Listing calendar--------------------------------------------------------->
+      <ul class="list-group mois">
+        <li class="list-group-item month">Janvier</li>
+        <li class="list-group-item month">Février</li>
+        <li class="list-group-item month">Mars</li>
+        <li class="list-group-item month">Avril</li>
+        <li class="list-group-item month">Mai</li>
+        <li class="list-group-item month">Juin</li>
+        <li class="list-group-item month">Juillet</li>
+        <li class="list-group-item month">Aout</li>
+        <li class="list-group-item month">Septembre</li>
+        <li class="list-group-item month">Octobre</li>
+        <li class="list-group-item month">Novembre</li>
+        <li class="list-group-item month">Decembre</li>
+      </ul>
+      <!--Listing calendar fin----------------------------------------------------->
+    </div>
+  </div>
+</div>
+<div class="col-sm-6 col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-body list-event">
+      <!-- event content-->
+    </div>
+  </div>
+</div>
+</div><!-- fin row -->
+</div><!-- fin container-->
+
+
+<!-- Scripts Jquery et Javascript Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

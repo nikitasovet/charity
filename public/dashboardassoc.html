@@ -1,85 +1,275 @@
-MON DASHBOARD ASSOCIATION !!!!!!!
-<a href="/signout">Se déconnecter</a>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Page publique</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+	<link rel="stylesheet"  href="css/style-sheet.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/simple-sidebar.css">
+ </head>
+<body ng-controller="mainController as store">
+
+	<!-- Navbar début -->
+
+	<!--Navbar (première barre de navigation)-->
+	<header id="header">
+	  <nav class="navbar navbar-default">
+	    <div class="container-fluid">
+	      <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myFirstNavbar">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+	      </div>
+	      <div class="collapse navbar-collapse" id="myFirstNavbar">
+	        <ul class="nav navbar-nav navbar-left">
+	          <li><a href="#"><span class="navigation">Charity</span></a></li>
+	        </ul>
+
+	        <ul class="nav navbar-nav navbar-right">
+	          <li><a href="#"><span class=""></span> Croix Rouge</a></li>
+	          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Paris 6</a></li>
+	          <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
+	          <li><a href="/signout"><span class="glyphicon glyphicon-user"></span> Se deconnecter</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	</header>
+
+
+	<!--Navbar (deuxième barre de navigation)-->
+	<header id="header">
+	  <nav class="navbar navbar-default">
+	    <div class="container-fluid">
+	      <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mySecondNavbar">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </button>
+	      </div>
+	      <div class="collapse navbar-collapse" id="mySecondNavbar">
+	        <ul class="nav navbar-nav navbar-left">
+	          <li><a href="#"><span class="navigation">Forum</span></a></li>
+	          <li class="active"><a href="calendar.html"><span class="navigation">Calendrier</span></a></li>
+	          <li><a href="#"><span class="navigation">Membres</span></a></li>
+	          <li><a href="dashboardassoc.html"><span class="navigation">Page publique</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	</header>
+
+	<!-- Navbar fin -->
+
+
 
 <div id="wrapper" ng-init="tabSelected = 1">
 
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    {{profile.username}}
-                </a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 1">Présentation</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 2">Activité</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 3">Photo</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 4">Calendrier</a>
-            </li>
-            <li>
-                <a href="" ng-click="tabSelected = 5">Modification</a>
-            </li>
-        </ul>
-    </div>
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="#">Surnom de l'association</a>
+				</li>
+				<li>
+					<a href="" ng-click="tabSelected = 1">Général</a>
+				</li>
+				<li>
+					<a href="" ng-click="tabSelected = 2">Présentation</a>
+				</li>
+				<!-- <li>
+						<a href="" ng-click="tabSelected = 3">Photo</a>
+				</li>
+				<li>
+						<a href="" ng-click="tabSelected = 4">Calendrier</a>
+				</li>
+				<li>
+						<a href="" ng-click="tabSelected = 5">Modification</a>
+				</li> -->
+		</ul>
+	</div>
 
-    <div class="container-fluid">
-
-      <div ng-show="tabSelected === 1" class="row">
-        <h1>{{profile.name}}</h1>
-        <h3>Presentation</h3>
-
-        <div class="description">{{profile.description}}</div>
-
-      <h3>Adresse</h3>
-      <div class="description">{{profile.address}}</div>
-
-      <h3>Code postal</h3>
-      <div class="description">{{profile.codePostal}}</div>
-
-      <h3>Ville</h3>
-      <div class="description">{{profile.city}}</div>
-
-      <h3>Pays</h3>
-      <div class="description">{{profile.Country}}</div>
-
-      <h3>Telephone</h3>
-      <div class="description">{{profile.phone}} </div>
-      </div>
-
-  		  <!--ACTIVITES-->
-      <div ng-show="tabSelected === 2" class="row">
-        <h1>Activité</h1>
-
-      </div>
-
-      <div ng-show="tabSelected === 3" class="row">
-        <h1>Photo</h1>
-        <img ng-src="images/{{profile.photo[0]}}" alt="image">
-
-      </div>
-
-      <div ng-show="tabSelected === 4" class="row">
-        <h1>Calendrier</h1>
-      </div>
-
-      <div  ng-show='tabSelected === 5' class="row">
-        <h1>Modification</h1>
+		<!--GENERAL-->
 
 
+		<div class="container">
+			<div ng-show="tabSelected === 1" class="row">
+				<div class="col-xs-offset-2 col-xs-10" class="form-group">
+					<div id="Général">
+						<h1>Général</h1>
+						<hr>
+					</div>
+				</div>
+				<div class="googleMap" class="col-xs-6" >
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.75769484257!2d2.2775173092228216!3d48.858950680835314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1479888503437" width="525" height="475" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+
+				<div class="col-xs-6" class="form-group">
+					<p class="tailleTitre" for="text">Nom de votre association</p>
+					<p>nom de l'association</p>
+				</div>
+
+				<br><br><br><br>
+
+				<div class="col-xs-6" class="form-group">
+					<div class="row"></div>
+					<label for="text">Pays</label>
+						<p>
+							pays
+						</p>
+				</div>
+				<br><br><br><br><br>
+
+				<div class="col-xs-6" class="form-group">
+					<p class="tailleTitre">Adresse exacte</p>
+				</div>
+
+				<div class="col-xs-6" class="form-group"><br>
+					<div class="row"></div>
+					<label for="text">Numéro et nom de la rue</label>
+						<p>
+							adresse
+						</p>
+				</div>
+
+				<br><br><br><br><br><br>
+
+				<div class="col-xs-3" class="form-group">
+					<label for="text">Code Postal</label>
+					<p>
+						code postal
+					</p>
+				</div>
+
+				<div class="col-xs-3" class="form-group">
+					<label for="text">Ville</label>
+					<p>ville</p>
+				</div>
+
+			</div>
 
 
 
-      </div>
+			<!--PRESENTATION-->
+			<div ng-show="tabSelected === 2" class="row">
+						<!-- <div class="col-xs-offset-2 col-xs-10" class="form-group"> -->
 
-    </div>
-    <!-- /#page-content-wrapper -->
+				<div id="Présentation">
+					<br><br><h1>Présentation</h1>
+					<hr>
+				</div>
 
+				<div class="col-xs-12" class="form-group">
+					<label class="tailleTitre" for="text">Résumé</label>
+					<div class="blocResume">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias explicabo dignissimos obcaecati laborum molestiae tempore, dolorum excepturi at eius neque inventore expedita repellendus possimus illum temporibus. Enim dolorum odio incidunt?
+					</div>
+				</div>
+				<br><br><br><br><br>
+
+				<div class="col-xs-12" class="form-group">
+					<label class="tailleTitre" for="text">Présentation générale</label>
+					<div class="blocPresentation">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias explicabo dignissimos obcaecati laborum molestiae tempore, dolorum excepturi at eius neque inventore expedita repellendus possimus illum temporibus. Enim dolorum odio incidunt?
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
 </div>
-<!-- /#wrapper -->
+
+	<!--ACTIVITES-->
+	<!-- <div class="col-xs-offset-2 col-xs-10" class="form-group">
+
+		<div id="Activites">
+			<h1>Activites</h1>
+			<hr> -->
+
+
+
+<!--
+				<div class="container">
+					<div class="row">
+					<div class="boiteActivites">
+						<div class="col-xs-4" class="form-group">
+							<label class="tailleTitre" for="text">Nom de l'activité</label>
+							<input type="text" class="form-control" placeholder="Maraud du jeudi soir">
+						</div><br><br><br><br>
+
+
+						<label>
+							<input type="checkbox" name="checkboxName" class="checkbox"/>
+							<div class="switch"></div>
+						</label>
+
+						<div class="col-xs-8" class="form-group">
+							<label class="tailleTitre" for="text">Description</label>
+							<input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas est fugit accusamus dignissimos, laboriosam dolores obcaecati incidunt a voluptates. Molestiae voluptates blanditiis aut iste ab, vero dolores quibusdam nihil.">
+						</div>
+					</div><br><br>
+
+					<div class="boiteActivites">
+						<div class="col-xs-4" class="form-group">
+							<label class="tailleTitre" for="text">Nom de l'activité</label>
+							<input type="text" class="form-control" placeholder="Maraud du vendredi soir">
+						</div><br><br><br><br>
+
+						<div class="col-xs-8" class="form-group">
+							<label class="tailleTitre" for="text">Description</label>
+							<input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas est fugit accusamus dignissimos, laboriosam dolores obcaecati incidunt a voluptates. Molestiae voluptates blanditiis aut iste ab, vero dolores quibusdam nihil.">
+						</div>
+					</div>
+
+					<br><br><br><br><br>
+
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+
+
+	<!--PHOTOS-->
+	<!-- <div class="col-xs-offset-2 col-xs-10" class="form-group">
+
+		<div id="Photos">
+			<h1>Photos</h1>
+			<hr>
+
+			<div class=row>
+				<div class="container">
+					<div class="col-xs-4" class="form-group">
+						<div class="blocPhoto1"><br><br>(photo 1)</div>
+					</div>
+
+					<div class="col-xs-8" class="form-group">
+						<div class="blocPhoto2"><br><br>(photo 2)</div>
+					</div>
+				</div>
+
+				<br><br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+		</div>
+	</div>
+</div>
+</div> -->
+
+<!--
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+	<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="angularJs/app2.js"></script>
+
+
+</body>
+</html>

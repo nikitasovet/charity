@@ -1,4 +1,4 @@
-/*.navigation
+.navigation
 {
 	font-size: 20px;
 }
@@ -79,7 +79,7 @@
 
 .bloc1
 {
-	margin-top: 20px;
+	margin-top: 50px;
 	height: 200px;
 }
 
@@ -213,7 +213,7 @@
 
 /*BOUTON IOS MOBILE*/
 
-/*.switch
+.switch
 {
 	width: 62px;
 	height: 32px;
@@ -327,4 +327,4 @@
 .switchOn:after
 {
 	left: 21px !important;
-}*/
+}
