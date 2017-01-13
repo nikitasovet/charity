@@ -1,139 +1,302 @@
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 col-xs-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <span class="navigation">EVENEMENTS A VENIR</span>
-            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Créer</button>
-            <!--Modal création ------------------------------------------------------------>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">CREATION D'EVENEMENT</h4>
-                  </div>
-                  <div class="modal-body">
-                    <!-- form début---------------------------------------------------------------->
-                    <form action="#" method="post" class="form" role="form">
-                      <input class="form-control" name="eventName" placeholder="Nom de l'évènement" type="text" />
-                      <input class="form-control event-margin" name="lieu" placeholder="Lieu de l'évènement" type="text" />
-                      <textarea name="message" id="message" class="form-control event-margin" rows="9" cols="25" required="required" placeholder="Description"></textarea>
-                      <label for=""></label>
-
-                      <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                          <p class="dateBeginEnd">Réccurent</p>
-                        </div>
-                        <div class="col-xs-6 col-md-6">
-                          <p class="dateBeginEnd">Inviter des membres</p>
-                        </div>
-                      </div>
-                      <div class="row yesNo">
-                        <div class="col-xs-5 col-md-3">
-                          <button type="button" class="btn btn-default">Oui</button>
-                          <button type="button" class="btn btn-default">Non</button>
-                        </div>
-
-                        <div class="col-xs-7 col-md-9">
-                          <button type="button" class="btn btn-default btn-block sendInvit">Invitations</button>
-                        </div>
-
-                      </div>
-
-
-                    </br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="navigation">EVENEMENTS A VENIR</span>
+          <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Créer</button>
+          <!--Modal création ------------------------------------------------------------>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">CREATION D'EVENEMENT</h4>
+                </div>
+                <div class="modal-body">
+                  <!-- form début---------------------------------------------------------------->
+                  <form action="#" method="post" class="form" role="form">
+                    <input class="form-control" name="eventName" placeholder="Nom de l'évènement" type="text" />
+                    <input class="form-control event-margin" name="lieu" placeholder="Lieu de l'évènement" type="text" />
+                    <textarea name="message" id="message" class="form-control event-margin" rows="9" cols="25" required="required" placeholder="Description"></textarea>
+                    <label for=""></label>
 
                     <div class="row">
-                      <div class="col-xs-12 col-md-12">
-                        <p class="dateBeginEnd">Tous les</p>
+                      <div class="col-xs-6 col-md-6">
+                        <p class="dateBeginEnd">Réccurent</p>
+                      </div>
+                      <div class="col-xs-6 col-md-6">
+                        <p class="dateBeginEnd">Inviter des membres</p>
                       </div>
                     </div>
                     <div class="row yesNo">
-                      <div class="col-xs-12 col-md-12">
-                        <button type="button" class="btn btn-default">Lundi</button>
-                        <button type="button" class="btn btn-default">Mardi</button>
-                        <button type="button" class="btn btn-default">Mercredi</button>
-                        <button type="button" class="btn btn-default">Jeudi</button>
-                        <button type="button" class="btn btn-default">Vendredi</button>
-                        <button type="button" class="btn btn-default">Samedi</button>
-                        <button type="button" class="btn btn-default">Dimanche</button>
+                      <div class="col-xs-5 col-md-3">
+                        <button type="button" class="btn btn-default">Oui</button>
+                        <button type="button" class="btn btn-default">Non</button>
                       </div>
+
+                      <div class="col-xs-7 col-md-9">
+                        <button type="button" class="btn btn-default btn-block sendInvit">Invitations</button>
+                      </div>
+
                     </div>
 
 
                   </br>
 
                   <div class="row">
-                    <div class="col-xs-6 col-md-6">
-                      <p class="hourBeginEnd">Date de début</p>
-                      <select class="form-control">
-                        <option value="Year"></option>
-                      </select>
+                    <div class="col-xs-12 col-md-12">
+                      <p class="dateBeginEnd">Tous les</p>
                     </div>
-
-                    <div class="col-xs-6 col-md-6">
-                      <p class="hourBeginEnd">Date de fin</p>
-                      <select class="form-control">
-                        <option value="Year"></option>
-                      </select>
+                  </div>
+                  <div class="row yesNo">
+                    <div class="col-xs-12 col-md-12">
+                      <button type="button" class="btn btn-default">Lundi</button>
+                      <button type="button" class="btn btn-default">Mardi</button>
+                      <button type="button" class="btn btn-default">Mercredi</button>
+                      <button type="button" class="btn btn-default">Jeudi</button>
+                      <button type="button" class="btn btn-default">Vendredi</button>
+                      <button type="button" class="btn btn-default">Samedi</button>
+                      <button type="button" class="btn btn-default">Dimanche</button>
                     </div>
                   </div>
 
+
                 </br>
+
                 <div class="row">
                   <div class="col-xs-6 col-md-6">
-                    <p class="hourBeginEnd">Heure de début</p>
+                    <p class="hourBeginEnd">Date de début</p>
                     <select class="form-control">
                       <option value="Year"></option>
                     </select>
                   </div>
 
+
                   <div class="col-xs-6 col-md-6">
-                    <p class="hourBeginEnd">Heure de fin</p>
+                    <p class="hourBeginEnd">Date de fin</p>
                     <select class="form-control">
                       <option value="Year"></option>
                     </select>
                   </div>
                 </div>
 
-              </form>
-            </div><!--End modal body-->
+              </br>
+              <div class="row">
+                <div class="col-xs-6 col-md-6">
+                  <p class="hourBeginEnd">Heure de début</p>
+                  <select class="form-control">
+                    <option value="Year"></option>
+                  </select>
+                </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-              <button type="button" class="btn btn-primary" type="submit">Sauvegarder</button>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+                <div class="col-xs-6 col-md-6">
+                  <p class="hourBeginEnd">Heure de fin</p>
+                  <select class="form-control">
+                    <option value="Year"></option>
+                  </select>
+                </div>
+              </div>
 
-      <!--Listing calendar--------------------------------------------------------->
-      <ul class="list-group mois">
-        <li class="list-group-item month">Janvier</li>
-        <li class="list-group-item month">Février</li>
-        <li class="list-group-item month">Mars</li>
-        <li class="list-group-item month">Avril</li>
-        <li class="list-group-item month">Mai</li>
-        <li class="list-group-item month">Juin</li>
-        <li class="list-group-item month">Juillet</li>
-        <li class="list-group-item month">Aout</li>
-        <li class="list-group-item month">Septembre</li>
-        <li class="list-group-item month">Octobre</li>
-        <li class="list-group-item month">Novembre</li>
-        <li class="list-group-item month">Decembre</li>
-      </ul>
-      <!--Listing calendar fin----------------------------------------------------->
-    </div>
+            </form>
+          </div><!--End modal body-->
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-primary" type="submit">Sauvegarder</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--Listing calendar--------------------------------------------------------->
+
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+               <div class="right-arrow pull-right">+</div>
+              <a href="#">Janvier</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Février</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Mars</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+               <div class="right-arrow pull-right">+</div>
+              <a href="#">Avril</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Mai</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Juin</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+               <div class="right-arrow pull-right">+</div>
+              <a href="#">Juillet</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Août</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Septembre</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+               <div class="right-arrow pull-right">+</div>
+              <a href="#">Octobre</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Novembre</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-title expand">
+                <div class="right-arrow pull-right">+</div>
+              <a href="#">Décembre</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+      </div>
+
+
+    <!--Listing calendar fin----------------------------------------------------->
   </div>
 </div>
+</div>
 <div class="col-sm-6 col-xs-12">
-  <div class="panel panel-default">
-    <div class="panel-body list-event">
-      <!-- event content-->
-    </div>
+<div class="panel panel-default">
+  <div class="panel-body list-event">
+    <!-- event content-->
   </div>
+</div>
 </div>
 </div><!-- fin row -->
 </div><!-- fin container-->
+
+
+<script type="text/javascript">
+  $(function() {
+  $(".expand").on( "click", function() {
+    // $(this).next().slideToggle(200);
+    $expand = $(this).find(">:first-child");
+
+    if($expand.text() == "+") {
+      $expand.text("-");
+    } else {
+      $expand.text("+");
+    }
+  });
+  });
+</script>

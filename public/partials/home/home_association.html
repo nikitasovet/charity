@@ -3,7 +3,7 @@
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 				<li class="sidebar-brand">
-					<a href="#">{{infos.surname}}</a>
+					<div class="surnom">{{infos.surname}}</div>
 				</li>
 				<li>
 					<a href="" ng-click="tabSelected = 1">Général</a>
@@ -11,15 +11,15 @@
 				<li>
 					<a href="" ng-click="tabSelected = 2">Présentation</a>
 				</li>
-				<!-- <li>
-						<a href="" ng-click="tabSelected = 3">Photo</a>
+				<li>
+						<a href="" ng-click="tabSelected = 3">Activité</a>
 				</li>
 				<li>
-						<a href="" ng-click="tabSelected = 4">Calendrier</a>
+						<a href="" ng-click="tabSelected = 4">Photo</a>
 				</li>
 				<li>
 						<a href="" ng-click="tabSelected = 5">Modification</a>
-				</li> -->
+				</li>
 		</ul>
 	</div>
 
@@ -28,12 +28,12 @@
 
 		<div class="container">
 			<div ng-show="tabSelected === 1" class="row">
-				<div class="col-xs-offset-2 col-xs-10" class="form-group">
+
 					<div id="Général">
 						<h1>Général</h1>
 						<hr>
 					</div>
-				</div>
+
 				<div class="googleMap" class="col-xs-6" >
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.75769484257!2d2.2775173092228216!3d48.858950680835314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1479888503437" width="525" height="475" frameborder="0" style="border:0" allowfullscreen></iframe>
 				</div>
@@ -56,10 +56,6 @@
               <p>{{infos.city}}</p>
   				</div>
         </div>
-
-
-
-
 			</div>
 
 
@@ -85,87 +81,66 @@
           </div>
 				</div>
 				<br><br><br><br><br>
-
-
-
 			</div>
 
-		</div>
-	</div>
-</div>
+			<!--ACTIVITES-->
 
-	<!--ACTIVITES-->
-	<!-- <div class="col-xs-offset-2 col-xs-10" class="form-group">
-
-		<div id="Activites">
-			<h1>Activites</h1>
-			<hr> -->
-
-
-
-<!--
-				<div class="container">
-					<div class="row">
-					<div class="boiteActivites">
-						<div class="col-xs-4" class="form-group">
-							<label class="tailleTitre" for="text">Nom de l'activité</label>
-							<input type="text" class="form-control" placeholder="Maraud du jeudi soir">
-						</div><br><br><br><br>
+							<div ng-show="tabSelected === 3" class="row">
+								<div id="Activites">
+									<h1>Activites</h1>
+									<hr>
+								</div>
+							<div class="boiteActivites">
+								<div class="col-xs-4" class="form-group">
+									<label class="tailleTitre" for="text">Nom de l'activité</label>
+									<input type="text" class="form-control" placeholder="Maraud du jeudi soir">
+								</div>
+								<br><br><br><br>
 
 
-						<label>
-							<input type="checkbox" name="checkboxName" class="checkbox"/>
-							<div class="switch"></div>
-						</label>
+								<label>
+									<input type="checkbox" name="checkboxName" class="checkbox"/>
+									<div class="switch"></div>
+								</label>
 
-						<div class="col-xs-8" class="form-group">
-							<label class="tailleTitre" for="text">Description</label>
-							<input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas est fugit accusamus dignissimos, laboriosam dolores obcaecati incidunt a voluptates. Molestiae voluptates blanditiis aut iste ab, vero dolores quibusdam nihil.">
-						</div>
-					</div><br><br>
+								<div class="col-xs-8" class="form-group">
+									<label class="tailleTitre" for="text">Description</label>
+									<input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas est fugit accusamus dignissimos, laboriosam dolores obcaecati incidunt a voluptates. Molestiae voluptates blanditiis aut iste ab, vero dolores quibusdam nihil.">
+								</div>
+							</div>
 
-					<div class="boiteActivites">
-						<div class="col-xs-4" class="form-group">
-							<label class="tailleTitre" for="text">Nom de l'activité</label>
-							<input type="text" class="form-control" placeholder="Maraud du vendredi soir">
-						</div><br><br><br><br>
+							<br><br>
+						<div class="row">
+							<div class="boiteActivites">
+								<div class="col-xs-4" class="form-group">
+									<label class="tailleTitre" for="text">Nom de l'activité</label>
+									<input type="text" class="form-control" placeholder="Maraud du vendredi soir">
+								</div><br><br><br><br>
 
-						<div class="col-xs-8" class="form-group">
-							<label class="tailleTitre" for="text">Description</label>
-							<input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas est fugit accusamus dignissimos, laboriosam dolores obcaecati incidunt a voluptates. Molestiae voluptates blanditiis aut iste ab, vero dolores quibusdam nihil.">
+								<div class="col-xs-8" class="form-group">
+									<label class="tailleTitre" for="text">Description</label>
+									<input type="text" class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quas est fugit accusamus dignissimos, laboriosam dolores obcaecati incidunt a voluptates. Molestiae voluptates blanditiis aut iste ab, vero dolores quibusdam nihil.">
+								</div>
+							</div>
 						</div>
 					</div>
 
-					<br><br><br><br><br>
+					<!--Photos -->
+					<div ng-show="tabSelected === 4" class="row">
+						<div id="Photos">
+							<h1>Photos</h1>
+							<hr>
+						</div>
+							<div class="col-xs-4" class="form-group">
+								<div class="blocPhoto1"><br><br>(photo 1)</div>
+							</div>
 
-				</div>
-			</div>
-		</div>
-	</div> -->
+							<div class="col-xs-8" class="form-group">
+								<div class="blocPhoto2"><br><br>(photo 2)</div>
+							</div>
+						</div>
 
 
 
-	<!--PHOTOS-->
-	<!-- <div class="col-xs-offset-2 col-xs-10" class="form-group">
-
-		<div id="Photos">
-			<h1>Photos</h1>
-			<hr>
-
-			<div class=row>
-				<div class="container">
-					<div class="col-xs-4" class="form-group">
-						<div class="blocPhoto1"><br><br>(photo 1)</div>
-					</div>
-
-					<div class="col-xs-8" class="form-group">
-						<div class="blocPhoto2"><br><br>(photo 2)</div>
-					</div>
-				</div>
-
-				<br><br><br><br><br><br><br><br><br><br><br><br>
-			</div>
 		</div>
 	</div>
-</div>
-</div> -->

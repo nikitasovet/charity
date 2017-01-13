@@ -2,6 +2,7 @@
 .navigation {
     font-size: 20px;
 }
+
 /* Navbar fin */
 .mois {
   padding-top: 10px;
@@ -37,3 +38,9 @@
 .sendInvit{
   text-align: center;
 }
+ /* Dropdown */
+
+a:focus, a:hover {
+  color: #23527c;
+  text-decoration: none;
+ }
