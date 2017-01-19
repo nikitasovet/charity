@@ -79,7 +79,11 @@ module.exports.eventDelete = (req, res) => {
   var eventId = req.params.eventId;
 
   Event
-      .findByIdAndRemove(eventId)
+      .find({
+        associationId: req.session.associationId,
+        _id: eventId
+      })
+      .remove()
       .exec(function(err, event){
         if(err){
           res

@@ -12,7 +12,23 @@
     $scope.infos = {};
     charityService.getOneAssociation().then(function(response){
       $scope.infos = response.data;
+
+      $scope.modif_description = $scope.infos.description;
     });
+
+
+    this.modifierAssociation = function() {
+      console.log('icici');
+      let infos = {
+        description: $scope.modif_description
+      }
+      charityService.putAssociationInfo(infos).then(function() {
+        // Ici on va recharger les informations de l'association
+        charityService.getOneAssociation().then(function(response){
+          $scope.infos = response.data;
+        });
+      })
+    }
 
   });
 
@@ -28,7 +44,7 @@
 
       // On définie une variable qui va s'incrementer si on trouve des événements
       // Qui on lieu le mois passé en parametre
-    
+
 
       // On parcours les events
       for(var i=0;i<$scope.events.length;i++) {
@@ -44,7 +60,6 @@
       }
       return false;
     }
-
 
 
     // Méthode de placement des événements en fonction de leurs mois
@@ -119,6 +134,16 @@
       $scope.selectedEvent = evenement;
     }
 
+    // Méthode pour supprimer un event
+    this.deleteEvent = function(evenement){
+      charityService.deleteOneEvent(evenement._id).then(function(response){
+        // Le traditionnel window.location.href ne semble pas fonctionner si on redirige vers la
+        // même page avec angular. Ducoup on recharge la route de cette manière.
+        var currentPageTemplate = $route.current.templateUrl;
+        $templateCache.remove(currentPageTemplate);
+        $route.reload();
+      })
+    }
 
   });
 
@@ -135,16 +160,15 @@
     })
   }]);
 
-  app.controller('mainController', function() {
-
-  });
 
   app.factory('charityService', function($http) {
       return {
           getOneAssociation: getOneAssociation,
+          putAssociationInfo: putAssociationInfo,
           getAllEvent: getAllEvent,
           getOnePost: getOnePost,
-          postOneEvent: postOneEvent
+          postOneEvent: postOneEvent,
+          deleteOneEvent: deleteOneEvent
       };
 
       function  getOneAssociation() {
@@ -161,6 +185,13 @@
 
         function getOnePost(eventid) {
           return $http.get('/api/event/' + eventid).then(complete).catch(failed);
+      }
+
+        function deleteOneEvent(eventid){
+          return $http.delete('api/event/' + eventid).then(complete).catch(failed);
+        }
+      function putAssociationInfo(infos) {
+        return $http.put('api/association', infos).then(complete).catch(failed);
       }
 
       function complete(response) {

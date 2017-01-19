@@ -353,6 +353,28 @@
   <p> {{selectedEvent.place}}</p>
   <p> {{selectedEvent.description}}</p>
   <p> {{selectedEvent.date}}</p>
+
+
+  <div ng-show="selectedEvent.name.length">
+    <button class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete">Supprimer l'événement</button>
+  </div>
+  <!-- modal pour supprimer -->
+  <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <b>Supprimer l'événement</b>
+            </div>
+            <div class="modal-body">
+              Êtes-vous sûr de vouloir supprimer cet événement ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                <a class="btn btn-danger btn-ok" ng-click="calendrierCtrl.deleteEvent(selectedEvent)" data-dismiss="modal">Supprimer</a>
+            </div>
+        </div>
+    </div>
+</div>
   </div>
 </div>
 </div>

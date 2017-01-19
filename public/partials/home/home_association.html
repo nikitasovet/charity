@@ -147,9 +147,13 @@
 								<hr>
 							</div>
 							<div class="col-xs-8" class="form-group">
-								<label class="tailleTitre" for="text">Description</label>
-								<input type="text" class="form-control" value="{{infos.description}}" ng-model="infos.description"/>
-								<input class="btn btn-default" value="Envoyer" type="submit"/>
+								<form name="formModification" class="form" role="form" ng-submit="formModification.$valid && homeCtrl.modifierAssociation()">
+									<label class="tailleTitre" for="text">Description</label>
+									<input type="text" class="form-control" ng-model="modif_description" required/>
+
+
+									<input class="btn btn-default" value="Envoyer" type="submit"/>
+								</form>
 						</div>
 					</div>
 

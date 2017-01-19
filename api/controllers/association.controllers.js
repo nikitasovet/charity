@@ -162,16 +162,16 @@ module.exports.associationPut = (req, res) => {
           }
 
 
-          association.name = req.body.name,
-          association.username = req.body.username,
-          association.address = req.body.address,
-          association.codePostal = req.body.codePostal,
-          association.city = req.body.city,
-          association.country = req.body.country,
-          association.phone = req.body.phone,
-          association.description = req.body.description,
-          association.lien = req.body.lien,
-          association.photo = _splitArray(req.body.photo)
+          // association.name = req.body.name,
+          // association.username = req.body.username,
+          // association.address = req.body.address,
+          // association.codePostal = req.body.codePostal,
+          // association.city = req.body.city,
+          // association.country = req.body.country,
+          // association.phone = req.body.phone,
+          association.description = req.body.description;
+          // association.lien = req.body.lien,
+          // association.photo = _splitArray(req.body.photo)
 
           association
           .save(function(err, associationUpdated){
