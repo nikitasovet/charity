@@ -15,25 +15,7 @@
     }
   });
 
-  // app.controller('form',function(charityService, $scope){
-  //   this.contact = function() {
-  //       charityService.postAddOne({
-  //           name: $scope.name,
-  //           username: $scope.username,
-  //           address: $scope.address,
-  //           codePostal: $scope.codePostal,
-  //           city: $scope.city,
-  //           country: $scope.country,
-  //           phone: $scope.phone,
-  //           description: $scope.description,
-  //           photo: $scope.photo
-  //       }).then(function(response) {
-  //           window.location.href = "dashboard";
-  //       });
-  //   }
-  //
-  //
-  // });
+
 
   // Controller pour créer un compte
   app.controller('registerController', function(charityService, $scope) {
@@ -85,23 +67,6 @@
     }
   });
 
-  // app.controller('modification',function(charityService, $scope, $routeParams){
-  //   this.modif = function(){
-  //     var associationId = $routeParams.associationId;
-  //     console.log(associationId);
-  //     // charityService.putOne(associationId, {
-  //     //   name: $scope.name,
-  //     //   address: $scope.address,
-  //     //   username: $scope.username,
-  //     //   codePostal: $scope.codePostal,
-  //     //   city: $scope.city,
-  //     //   country: $scope.country,
-  //     //   phone: $scope.phone,
-  //     //   description: $scope.description,
-  //     //   photo: $scope.photo
-  //     // })
-  //   }
-  // });
 
 
   app.config(['$routeProvider',function($routeProvider){

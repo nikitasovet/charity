@@ -140,7 +140,18 @@
 							</div>
 						</div>
 
-
+						<!-- Modification -->
+						<div ng-show="tabSelected === 5" class="row">
+							<div id="Modification">
+								<h1> Modification </h1>
+								<hr>
+							</div>
+							<div class="col-xs-8" class="form-group">
+								<label class="tailleTitre" for="text">Description</label>
+								<input type="text" class="form-control" value="{{infos.description}}" ng-model="infos.description"/>
+								<input class="btn btn-default" value="Envoyer" type="submit"/>
+						</div>
+					</div>
 
 		</div>
 	</div>

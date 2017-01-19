@@ -6,125 +6,140 @@
           <span class="navigation">EVENEMENTS A VENIR</span>
           <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Créer</button>
           <!--Modal création ------------------------------------------------------------>
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">CREATION D'EVENEMENT</h4>
-                </div>
-                <div class="modal-body">
-                  <!-- form début---------------------------------------------------------------->
-                  <form action="#" method="post" class="form" role="form">
-                    <input class="form-control" name="eventName" placeholder="Nom de l'évènement" type="text" />
-                    <input class="form-control event-margin" name="lieu" placeholder="Lieu de l'évènement" type="text" />
-                    <textarea name="message" id="message" class="form-control event-margin" rows="9" cols="25" required="required" placeholder="Description"></textarea>
-                    <label for=""></label>
 
-                    <div class="row">
-                      <div class="col-xs-6 col-md-6">
-                        <p class="dateBeginEnd">Réccurent</p>
+          <!-- form début---------------------------------------------------------------->
+          <form name="event" class="form" role="form" ng-submit="event.$valid && calendarEvent()">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">CREATION D'EVENEMENT</h4>
+                  </div>
+                  <div class="modal-body">
+
+                      <input class="form-control" name="eventName" placeholder="Nom de l'évènement" type="text" ng-model="name" required />
+                      <input class="form-control event-margin" name="lieu" placeholder="Lieu de l'évènement" type="text" ng-model="place" required/>
+                      <textarea name="message" id="message" class="form-control event-margin" rows="9" cols="25" required="required" placeholder="Description" ng-model="description" required></textarea>
+                      <label for=""></label>
+
+                      <div class="row">
+                        <!-- <div class="col-xs-6 col-md-6">
+                          <p class="dateBeginEnd">Réccurent</p>
+                        </div> -->
+                        <div class="col-xs-6 col-md-6">
+                          <p class="dateBeginEnd">Inviter des membres</p>
+                        </div>
                       </div>
-                      <div class="col-xs-6 col-md-6">
-                        <p class="dateBeginEnd">Inviter des membres</p>
+                      <div class="row yesNo">
+                        <!--
+                        <div class="col-xs-5 col-md-3">
+                          <button type="button" class="btn btn-default">Oui</button>
+                          <button type="button" class="btn btn-default">Non</button>
+                        </div>-->
+
+                        <div class="col-xs-12 col-md-9">
+                          <button type="button" class="btn btn-default btn-block sendInvit">Invitations</button>
+                        </div>
+
+                      </div>
+
+
+                    <br/>
+
+                    <!-- <div class="row">
+                      <div class="col-xs-12 col-md-12">
+                        <p class="dateBeginEnd">Tous les</p>
                       </div>
                     </div>
                     <div class="row yesNo">
-                      <div class="col-xs-5 col-md-3">
-                        <button type="button" class="btn btn-default">Oui</button>
-                        <button type="button" class="btn btn-default">Non</button>
+                      <div class="col-xs-12 col-md-12">
+                        <button type="button" class="btn btn-default">Lundi</button>
+                        <button type="button" class="btn btn-default">Mardi</button>
+                        <button type="button" class="btn btn-default">Mercredi</button>
+                        <button type="button" class="btn btn-default">Jeudi</button>
+                        <button type="button" class="btn btn-default">Vendredi</button>
+                        <button type="button" class="btn btn-default">Samedi</button>
+                        <button type="button" class="btn btn-default">Dimanche</button>
                       </div>
-
-                      <div class="col-xs-7 col-md-9">
-                        <button type="button" class="btn btn-default btn-block sendInvit">Invitations</button>
-                      </div>
-
-                    </div>
+                    </div> -->
 
 
-                  </br>
+                  <br/>
 
                   <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                      <p class="dateBeginEnd">Tous les</p>
+                    <div class="col-xs-12">
+                      <input type="text" class="form-control" id="datetimepicker" required/>
+                      <input type="text" id="datepickertimestamp" ng-model="dateTimestamp" style="display:none;"/>
                     </div>
-                  </div>
-                  <div class="row yesNo">
-                    <div class="col-xs-12 col-md-12">
-                      <button type="button" class="btn btn-default">Lundi</button>
-                      <button type="button" class="btn btn-default">Mardi</button>
-                      <button type="button" class="btn btn-default">Mercredi</button>
-                      <button type="button" class="btn btn-default">Jeudi</button>
-                      <button type="button" class="btn btn-default">Vendredi</button>
-                      <button type="button" class="btn btn-default">Samedi</button>
-                      <button type="button" class="btn btn-default">Dimanche</button>
+                    <!-- <div class="col-xs-6 col-md-6">
+                      <p class="hourBeginEnd" ng-model="date" required>Date de début</p>
+                      <select class="form-control">
+                        <option value="Year"></option>
+                      </select>
                     </div>
-                  </div>
 
+
+                    <div class="col-xs-6 col-md-6">
+                      <p class="hourBeginEnd" ng-model="date" required>Date de fin</p>
+                      <select class="form-control">
+                        <option value="Year"></option>
+                      </select>
+                    </div> -->
+                  </div>
 
                 </br>
-
                 <div class="row">
-                  <div class="col-xs-6 col-md-6">
-                    <p class="hourBeginEnd">Date de début</p>
+                  <!-- <div class="col-xs-6 col-md-6">
+                    <p class="hourBeginEnd" ng-model="hours" required>Heure de début</p>
                     <select class="form-control">
                       <option value="Year"></option>
                     </select>
                   </div>
 
-
                   <div class="col-xs-6 col-md-6">
-                    <p class="hourBeginEnd">Date de fin</p>
+                    <p class="hourBeginEnd" ng-model="hours" required>Heure de fin</p>
                     <select class="form-control">
                       <option value="Year"></option>
                     </select>
-                  </div>
+                  </div> -->
                 </div>
 
-              </br>
-              <div class="row">
-                <div class="col-xs-6 col-md-6">
-                  <p class="hourBeginEnd">Heure de début</p>
-                  <select class="form-control">
-                    <option value="Year"></option>
-                  </select>
-                </div>
 
-                <div class="col-xs-6 col-md-6">
-                  <p class="hourBeginEnd">Heure de fin</p>
-                  <select class="form-control">
-                    <option value="Year"></option>
-                  </select>
-                </div>
-              </div>
+            </div><!--End modal body-->
 
-            </form>
-          </div><!--End modal body-->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" id="closePopUp">Annuler</button>
+              <input type="submit" class="btn btn-primary" value="Sauvegarder"/>
+            </div>
 
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-            <button type="button" class="btn btn-primary" type="submit">Sauvegarder</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </form>
 
     <!--Listing calendar--------------------------------------------------------->
 
       <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
+        <div class="panel panel-default" >
           <div class="panel-heading">
             <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
                <div class="right-arrow pull-right">+</div>
               <a href="#">Janvier</a>
             </h4>
           </div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse1" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Janvier') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Janvier')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
+
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
@@ -132,10 +147,15 @@
               <a href="#">Février</a>
             </h4>
           </div>
-          <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse2" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Fevrier') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Fevrier')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
@@ -145,127 +165,177 @@
               <a href="#">Mars</a>
             </h4>
           </div>
-          <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse3" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Mars') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Mars')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="panel-title expand">
                <div class="right-arrow pull-right">+</div>
               <a href="#">Avril</a>
             </h4>
           </div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse4" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Avril') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Avril')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="panel-title expand">
                 <div class="right-arrow pull-right">+</div>
               <a href="#">Mai</a>
             </h4>
           </div>
-          <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse5" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Mai') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Mai')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse6" class="panel-title expand">
                 <div class="right-arrow pull-right">+</div>
               <a href="#">Juin</a>
             </h4>
           </div>
-          <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse6" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Juin') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Juin')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse7" class="panel-title expand">
                <div class="right-arrow pull-right">+</div>
               <a href="#">Juillet</a>
             </h4>
           </div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse7" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Juillet') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Juillet')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse8" class="panel-title expand">
                 <div class="right-arrow pull-right">+</div>
               <a href="#">Août</a>
             </h4>
           </div>
-          <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse8" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Aout') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Aout')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse9" class="panel-title expand">
                 <div class="right-arrow pull-right">+</div>
               <a href="#">Septembre</a>
             </h4>
           </div>
-          <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse9" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Septembre') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Septembre')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse10" class="panel-title expand">
                <div class="right-arrow pull-right">+</div>
               <a href="#">Octobre</a>
             </h4>
           </div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse10" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Octobre') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Octobre')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse11" class="panel-title expand">
                 <div class="right-arrow pull-right">+</div>
               <a href="#">Novembre</a>
             </h4>
           </div>
-          <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse11" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Novembre') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Novembre')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="panel-title expand">
+            <h4 data-toggle="collapse" data-parent="#accordion" href="#collapse12" class="panel-title expand">
                 <div class="right-arrow pull-right">+</div>
               <a href="#">Décembre</a>
             </h4>
           </div>
-          <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          <div id="collapse12" class="panel-collapse collapse" ng-class="siUnEvenementPourCeMois('Decembre') ? 'in' : ''">
+            <div
+              class="panel-body"
+              ng-click="calendrierCtrl.clickOnEvent(event)"
+              style="cursor:pointer;"
+              ng-repeat="event in events"
+              ng-show="siLeMoisDeLevenementEstLeMemeQueLeDIV(event, 'Decembre')">
+              <p>{{event.name}}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -279,6 +349,10 @@
 <div class="panel panel-default">
   <div class="panel-body list-event">
     <!-- event content-->
+  <p> {{selectedEvent.name}}</p>
+  <p> {{selectedEvent.place}}</p>
+  <p> {{selectedEvent.description}}</p>
+  <p> {{selectedEvent.date}}</p>
   </div>
 </div>
 </div>

@@ -4,8 +4,11 @@ var Event = mongoose.model('event');
 module.exports.eventGetAll = (req, res) => {
     console.log('Get the event');
 
+    // Ici on veut tous les événements de l'association qui est connecté en session
     Event
-        .find()
+        .find({
+          associationId: req.session.associationId
+        })
         .exec(function(err, events){
           console.log(err);
           console.log(events);
@@ -52,10 +55,11 @@ module.exports.eventAddOne = (req, res) => {
 
   Event
       .create({
-         name:req.body.name,
-         date:req.body.date,
-         hours:req.body.hours,
-         description:req.body.description,
+        associationId: req.session.associationId,
+        name:req.body.name,
+        date:req.body.date,
+        description:req.body.description,
+        place: req.body.place
       }, function(err, event){
         if(err){
           console.log("Error creating event");
@@ -111,10 +115,11 @@ module.exports.eventPut = (req, res) => {
               .json(err);
           return;
         }
-        event.name = req.body.name,
-        event.date = req.body.date,
-        event.hours = req.body.hours,
-        event.description = req.body.description,
+
+        event.name = req.body.name;
+        event.date = req.body.date;
+        event.description = req.body.description;
+        event.place = req.body.place;
 
         event
           .save(function(err, eventUpdated){
