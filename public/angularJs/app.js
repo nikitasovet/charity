@@ -8,12 +8,7 @@
     }
   });
 
-  app.directive('footer',function(){
-    return{
-      restrict: 'A',
-      templateUrl: 'partials/common/footer.html'
-    }
-  });
+
 
 
 

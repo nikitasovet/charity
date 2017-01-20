@@ -161,13 +161,13 @@ module.exports.associationPut = (req, res) => {
             return;
           }
 
-
-          // association.name = req.body.name,
-          // association.username = req.body.username,
-          // association.address = req.body.address,
-          // association.codePostal = req.body.codePostal,
-          // association.city = req.body.city,
-          // association.country = req.body.country,
+console.log(req.body);
+          association.name = req.body.name,
+          association.surname = req.body.surname,
+          association.address = req.body.address,
+          association.codePostal = req.body.codePostal,
+          association.city = req.body.city,
+          association.country = req.body.country,
           // association.phone = req.body.phone,
           association.description = req.body.description;
           // association.lien = req.body.lien,

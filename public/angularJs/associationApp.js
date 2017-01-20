@@ -14,13 +14,26 @@
       $scope.infos = response.data;
 
       $scope.modif_description = $scope.infos.description;
+      $scope.modif_name = $scope.infos.name;
+      $scope.modif_address = $scope.infos.address;
+      $scope.modif_codePostal = $scope.infos.codePostal;
+      $scope.modif_city = $scope.infos.city;
+      $scope.modif_country = $scope.infos.country;
+      $scope.modif_surname = $scope.infos.surname;
     });
 
 
     this.modifierAssociation = function() {
       console.log('icici');
       let infos = {
-        description: $scope.modif_description
+        description: $scope.modif_description,
+        name: $scope.modif_name,
+        address: $scope.modif_address,
+        codePostal: $scope.modif_codePostal,
+        city: $scope.modif_city,
+        country: $scope.modif_country,
+        surname: $scope.modif_surname
+
       }
       charityService.putAssociationInfo(infos).then(function() {
         // Ici on va recharger les informations de l'association
@@ -181,18 +194,19 @@
 
         function getAllEvent() {
             return $http.get('/api/event').then(complete).catch(failed);
-        }
+       }
 
         function getOnePost(eventid) {
           return $http.get('/api/event/' + eventid).then(complete).catch(failed);
-      }
+       }
 
         function deleteOneEvent(eventid){
           return $http.delete('api/event/' + eventid).then(complete).catch(failed);
-        }
+       }
+
       function putAssociationInfo(infos) {
         return $http.put('api/association', infos).then(complete).catch(failed);
-      }
+       }
 
       function complete(response) {
           return response;
